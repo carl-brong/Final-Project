@@ -13,13 +13,12 @@ using namespace std;
 
 //const string testfile = "testing.wav"; // inside main
 const string echofile = "echos.wav";
-const string limitfile = "limit.wav";
-const string noisefile = "noise.wav";
+const string normalfile = "normalization.wav";
+const string gainfile = "gain.wav";
+const string lowpassfile = "lowpass.wav";
+const string compressorfile = "compressor.wav";
 
-/**
-* Running files
-* @main - all the files are passed in, combined, and added for user implementation to run.
-*/
+//all the files are passed in, combined, and added for user implementation to run.//
 int main(int argc, char const *argv[]) 
 {
 
@@ -30,10 +29,7 @@ int main(int argc, char const *argv[])
 		testfile.push_back(argv[i]);
 
 	}
-/**
-* this is the user's first choice of chosing a file
-* @choice
-*/
+//this is the user's first choice of chosing a file//
 	int choice1;
 	int Icontinue = -1;
 	int addMods = 0;
@@ -52,12 +48,8 @@ int main(int argc, char const *argv[])
 		//for(int i = 1; i<args.size;i++){  string testFile = args[i]   } ||NOT IN CORRECT PLACE
 		switch (choice1)
 		{
-				/**
-				* This is where we will display the file choices.
-				* @case1 we will then progress from the file they choose to picking from
-				* normalization, noise gating, and echo repeadedly, each time in between asking
-				*if they want to add another processor
-						*/
+				
+				//This is where we will display the file choices.//
 			case 1:
 				do
 				{
@@ -80,7 +72,7 @@ int main(int argc, char const *argv[])
 									wavfile1.readFile(s);
 									Processor *processor1 = new Echo(1);
 									processor1->processBuffer(wavfile1.getBuffer(),wavfile1.getBufferSize(), wavfile1);
-									wavfile1.writeFile(s + "_echos.wav"); // LOOK HERE GIVES NEW NAMES FOR EACH FILE
+									wavfile1.writeFile(s + "_echos.wav"); //gives new names for each file
 									
 									cout << "You have chosen to echo the file, would you like to add another selection?\n1 for yes, 2 for no:\n";
 									cin>>addMods;
@@ -169,9 +161,8 @@ int main(int argc, char const *argv[])
 			Icontinue =4;
 			break;
 
-	/**
-	* @default The user has entered and invalid menu option, and is directed to choose again 
-	*/
+
+//default The user has entered and invalid menu option, and is directed to choose again //
 
 		default:
 			cout << "Not a Valid Choice. \n";
