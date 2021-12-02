@@ -1,6 +1,6 @@
 #ifndef ECHO_H
 #define ECHO_H
-#include "Processor.h"
+#include "processor.h"
 #include "wav.h"
 using namespace std;
 
