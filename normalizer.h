@@ -2,7 +2,7 @@
 #define NORMALIZER_H
 
 #include <iostream>
-#include "Processor.h"
+#include "processor.h"
 
 using namespace std;
 
