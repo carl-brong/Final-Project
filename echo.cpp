@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Echo.h"
+#include "echo.h"
 
 
 Echo::Echo(int delay): delay(delay) 
